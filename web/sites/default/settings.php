@@ -24,3 +24,14 @@ $config_directories['sync'] = '../config/sync';
 if (file_exists($app_root . '/' . $site_path . '/settings.' . $environment . '.php')) {
     include $app_root . '/' . $site_path . '/settings.' . $environment . '.php';
 }
+$databases['default']['default'] = array (
+  'database' => 'drupal',
+  'username' => 'drupal',
+  'password' => 'drupal',
+  'prefix' => '',
+  'host' => 'db',
+  'port' => '3306',
+  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+  'driver' => 'mysql',
+);
+$settings['hash_salt'] = 'IXSvCh7_FerEuZKD83oeAxRO4DNIcDmEpIO6V-Pw2q-7Spa89X-s0cMPaoksnNvQyh9Djo2biA';

@@ -9,6 +9,14 @@ composer() {
     fi
 }
 
+drush() {
+    if [ "$TOOLS_IN_DOCKER" = "1" ]; then
+        docker-compose run --rm --entrypoint php --workdir=/var/www/html/web php  ../vendor/bin/drush "$@"
+    else
+        command drush "$@"
+    fi
+}
+
 dc() {
     command docker-compose "$@"
 }

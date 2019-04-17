@@ -24,9 +24,6 @@ services:
     image: mariadb
     environment:
       MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: drupal
-      MYSQL_USER: drupal
-      MYSQL_PASSWORD: drupal
     volumes:
       - db-data:/var/lib/mysql
     ports:

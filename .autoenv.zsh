@@ -8,3 +8,7 @@ composer() {
         command composer "$@"
     fi
 }
+
+dc() {
+    command docker-compose "$@"
+}

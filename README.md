@@ -3,4 +3,5 @@
 ## Requirements
 
 - Docker
+- Docker Compose
 - Oh My Zsh

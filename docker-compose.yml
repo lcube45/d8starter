@@ -44,7 +44,6 @@ services:
       - .:/app:cached
     tty: true
     ports:
-      - 3000:3000
       - 35729:35729
 volumes:
   db-data:

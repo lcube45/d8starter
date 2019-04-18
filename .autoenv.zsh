@@ -27,7 +27,7 @@ npm() {
 
 gulp() {
     if [ "$TOOLS_IN_DOCKER" = "1" ]; then
-        docker-compose run --rm --entrypoint gulp --workdir=/app/web/themes/custom/lcube_ui node "$@"
+        docker-compose run -T --rm --entrypoint gulp --workdir=/app/web/themes/custom/lcube_ui node "$@"
     else
         command npm gulp "$@"
     fi

@@ -36,5 +36,15 @@ services:
     image: djfarrelly/maildev
     ports:
       - "11080:80"
+  node:
+    build:
+      context: .docker
+      dockerfile: node/Dockerfile
+    volumes:
+      - .:/app:cached
+    tty: true
+    ports:
+      - 3000:3000
+      - 35729:35729
 volumes:
   db-data:

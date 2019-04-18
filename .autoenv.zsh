@@ -17,6 +17,22 @@ drush() {
     fi
 }
 
+npm() {
+    if [ "$TOOLS_IN_DOCKER" = "1" ]; then
+        docker-compose run --rm --entrypoint npm --workdir=/app/web/themes/custom/lcube_ui node "$@"
+    else
+        command npm "$@"
+    fi
+}
+
+gulp() {
+    if [ "$TOOLS_IN_DOCKER" = "1" ]; then
+        docker-compose run --rm --entrypoint gulp --workdir=/app/web/themes/custom/lcube_ui node "$@"
+    else
+        command npm gulp "$@"
+    fi
+}
+
 dc() {
     command docker-compose "$@"
 }

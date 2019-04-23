@@ -18,6 +18,7 @@ services:
       dockerfile: .docker/php/Dockerfile
     volumes:
       - .:/var/www/html:cached
+      - d8-files:/var/www/html/web/sites/default/files
       - .docker/php/php.ini:/usr/local/etc/php/conf.d/zzz-php.ini
     environment:
       - XDEBUG_CONFIG=idekey=PHPSTORM remote_host=docker.for.mac.localhost
@@ -47,3 +48,4 @@ services:
       - 35729:35729
 volumes:
   db-data:
+  d8-files:
